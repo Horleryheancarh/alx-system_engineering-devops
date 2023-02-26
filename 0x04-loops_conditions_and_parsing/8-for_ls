@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Creating a script to list files
+for j in *
+do
+	echo "$j" | cut -f 2- -d '-'
+done
