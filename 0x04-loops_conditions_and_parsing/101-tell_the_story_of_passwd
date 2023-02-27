@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Parsing /etc/passwd
+while IFS= read -r line
+do
+	username=$(echo "$line" | cut -f 1 -d ':')
+	password=$(echo "$line" | cut -f 2 -d ':')
+	userId=$(echo "$line" | cut -f 3 -d ':')
+	groupId=$(echo "$line" | cut -f 4 -d ':')
+	userInfo=$(echo "$line" | cut -f 5 -d ':')
+	home=$(echo "$line" | cut -f 6 -d ':')
+	commands=$(echo "$line" | cut -f 7 -d ':')
+	
+	echo -n "The user $username is part of the $groupId gang, "
+	echo -n "lives in $home and rides $commands."
+	echo -n " $userId's place is protected by the passcode $password, "
+	echo "more info about the user here: $userInfo"
+
+done < "/etc/passwd"
