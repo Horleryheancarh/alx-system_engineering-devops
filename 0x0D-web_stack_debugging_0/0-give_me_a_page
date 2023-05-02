@@ -1,3 +1,3 @@
-#!/usr/bin/env
+#!/usr/bin/env bash
 # Turn on an Apache Server
 service apache2 start
