@@ -22,8 +22,8 @@ if __name__ == "__main__":
     tasks_list = []
     for task in tasks:
         task_dict = {"task": task.get('title'),
-                "completed": task.get('completed'),
-                "username": name}
+                     "completed": task.get('completed'),
+                     "username": name}
         tasks_list.append(task_dict)
 
     task_d = {str(user_id): tasks_list}

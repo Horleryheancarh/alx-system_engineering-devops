@@ -22,15 +22,15 @@ if __name__ == "__main__":
     tasks_list = []
     for task in tasks:
         tasks_list.append([user_id,
-            name,
-            task.get('completed'),
-            task.get('title')])
+                           name,
+                           task.get('completed'),
+                           task.get('title')])
 
     file_name = '{}.csv'.format(user_id)
     with open(file_name, mode='w') as f:
         writer = csv.writer(f,
-                delimiter=',',
-                quotechar='"',
-                quoting=csv.QUOTE_ALL)
+                            delimiter=',',
+                            quotechar='"',
+                            quoting=csv.QUOTE_ALL)
         for task in tasks_list:
             writer.writerow(task)
