@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 # Change port from 8080 to 80
-sed -i "s/listen 8080 default_server;/listen 80 default_server;/" /etc/nginx/sites-enabled/default
-sed -i "s/listen \[::\]:8080 default_server ipv6only=on;/listen \[::\]:80 default_server;/" /etc/nginx/sites-enabled/default
-sed -i "s/ ipv6only=on//" /etc/nignx/sites-available/default
+sed -i "s/etc/nginx/sites-enabled/sites-available" /etc/nginx/nginx.conf
 service nginx restart
