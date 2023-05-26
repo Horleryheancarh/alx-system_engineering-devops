@@ -14,7 +14,7 @@ if __name__ == "__main__":
     users = '{}users/{}'.format(api_url, user_id)
     resp = requests.get(users)
     obj = resp.json()
-    name = obj.get('name')
+    name = obj.get('username')
 
     todos = '{}todos?userId={}'.format(api_url, user_id)
     resp = requests.get(todos)

@@ -13,7 +13,7 @@ if __name__ == "__main__":
     url = '{}users'.format(api_url)
     resp = requests.get(url)
     users = resp.json()
-    task_dict = {}
+    task_all = {}
 
     for user in users:
         name = user.get('username')
@@ -27,8 +27,8 @@ if __name__ == "__main__":
                          "task": task.get('title'),
                          "completed": task.get('completed')}
             tasks_list.append(task_dict)
+        task_all[user_id] = tasks_list
 
-        task_dict[str(user_id)] = tasks_list
     file_name = 'todo_all_employees.json'
     with open(file_name, mode='w') as f:
-        json.dump(task_dict, f)
+        json.dump(task_all, f)
